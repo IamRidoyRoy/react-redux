@@ -1,12 +1,35 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 
 const ShortForm = () => {
 
-    const [input, setInput] = useState(0)
+    // const [input, setInput] = useState(0)
+
+
+
+    const initialState = {
+        firstName: '',
+        lastName: ''
+    }
+    const reducer = (state, action) => {
+        switch (action.type) {
+
+        }
+        console.log(action)
+        if (action.type == "Input") {
+            return {
+                ...state,
+                [action.payload.name]: action.payload.value,
+            }
+        }
+        console.log(action)
+    }
+
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     const submit = (event) => {
         event.preventDefault();
-        console.log(input);
+        console.log(state)
+
     }
 
     return (
@@ -15,11 +38,11 @@ const ShortForm = () => {
             <form onSubmit={submit}>
                 <label>
                     FirstName:
-                    <input type="text" name="name" onBlur={(e) => setInput(e.target.value)} />
+                    <input type="text" name="firstName" onBlur={(e) => dispatch({ type: "Input", payload: { name: e.target.name, value: e.target.value } })} />
                 </label> <br />
                 <label>
                     LastName:
-                    <input type='text' name='lastName' onBlur={(e2) => setInput(e2.target.value)}></input>
+                    <input type='text' name='lastName' onBlur={(e) => dispatch({ type: 'Input', payload: { name: e.target.name, value: e.target.value } })}></input>
                 </label> <br />
                 <input type="submit" value="Submit" />
             </form>
