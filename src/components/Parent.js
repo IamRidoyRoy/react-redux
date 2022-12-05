@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { COUNTER_CONTEXT } from '../App';
 import Child from './Child';
+import ShortForm from './ShortForm';
 
 
 
@@ -19,9 +20,9 @@ const Parent = () => {
             <button onClick={reset}>Make Zero</button>
 
             <Child></Child>
+            <ShortForm></ShortForm>
+
         </div>
-
-
 
     );
 };

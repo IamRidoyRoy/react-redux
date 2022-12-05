@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { COUNTER_CONTEXT } from '../App';
 
 const Child = () => {
-    // console.log(passCounter);
     const { counter } = useContext(COUNTER_CONTEXT)
     return (
         <div>
@@ -13,3 +12,4 @@ const Child = () => {
 };
 
 export default Child;
+
