@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { COUNTER_CONTEXT } from '../App';
 import Child from './Child';
+import CreateUseReducer from './CreateUseReducer';
 import ShortForm from './ShortForm';
 
 
@@ -21,6 +22,7 @@ const Parent = () => {
 
             <Child></Child>
             <ShortForm></ShortForm>
+            <CreateUseReducer></CreateUseReducer>
 
         </div>
 
